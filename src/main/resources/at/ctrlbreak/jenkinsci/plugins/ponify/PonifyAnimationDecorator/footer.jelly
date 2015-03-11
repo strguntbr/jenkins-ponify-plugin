@@ -1,0 +1,21 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:i="jelly:fmt" xmlns:local="local">
+	<script type="text/javascript">
+		var ponifyJenkinsRootUrl = "${rootURL}";
+	</script>
+	<j:if test="${it.ponifyAnimationEnabled}" escapeText="false">
+		<script type="text/javascript" src="/jenkins/plugin/ponify/js/ponify.js"></script>
+		<script type="text/javascript">
+			/*window.onload = function() { ponify(); };*/
+			ponify();
+		</script>
+	</j:if>
+	<j:if test="${!it.ponifyAnimationEnabled}" escapeText="false">
+		<script type="text/javascript" src="/jenkins/plugin/ponify/js/ponified.js"></script>
+		<script type="text/javascript">
+			ponified();
+		</script>
+	</j:if>
+	<script type="text/javascript">
+		document.body.className = document.body.className + " ponified";
+	</script>
+</j:jelly>

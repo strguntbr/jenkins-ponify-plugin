@@ -1,0 +1,34 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:i="jelly:fmt" xmlns:local="local">
+<style type="text/css">
+	<j:if test="${it.ponifyAnimationEnabled}" escapeText="false">
+body {
+ background-color: #ffffff;
+ transition: background-color 5s ease-in-out 4s;
+}
+.bigtable th {
+ transition: background-color 5s ease-in-out 4s;
+}
+.tabBar [type="radio"]:checked ~ a {
+ transition: background-color 5s ease-in-out 4s, border-color 5s ease-in-out 4s;
+}
+.pane-header, .pane-footer {
+ background-color: #f0f0f0;
+ transition: background-color 5s ease-in-out 4s;
+}
+	</j:if>
+
+body.ponified {
+ background-color: #fff5f5;
+}
+body.ponified .bigtable th {
+ background-color: #edd;
+}
+body.ponified .tabBar [type="radio"]:checked ~ a {
+ background-color: #edd;
+ border-color: #f0f0f0 #f0f0f0 #edd;
+}
+body.ponified .pane-header, body.ponified .pane-footer {
+ background-color: #edd;
+}
+</style>
+</j:jelly>
